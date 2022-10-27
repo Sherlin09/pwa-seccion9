@@ -13,7 +13,8 @@ app.use(express.static(publicPath));
 
 // Rutas 
 const routes = require('./routes');
-app.use('/api', routes );
+app.use('/api', routes);
+
 
 
 
