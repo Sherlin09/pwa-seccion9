@@ -44,7 +44,19 @@ function manejoApiMensajes(cacheName, req) {
 
     if (req.clone().method === 'POST') {
 
-        return fetch(req);
+        if (self.registration.sync) {
+            return req.clone().text().then(body => {
+
+
+                const bodyObj = JSON.parse(body);
+                return guardarMensaje(bodyObj);
+
+            });
+        } else {
+            return fetch(req);
+        }
+
+
     } else {
 
         return fetch(req).then(res => {
@@ -61,4 +73,6 @@ function manejoApiMensajes(cacheName, req) {
         });
 
     }
+
+
 }
