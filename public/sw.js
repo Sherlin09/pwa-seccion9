@@ -122,6 +122,7 @@ self.addEventListener('sync', e => {
 
         const respuesta = postearMensajes();
 
+        e.waitUntil(respuesta);
     }
 
 
