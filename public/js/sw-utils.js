@@ -49,7 +49,7 @@ function manejoApiMensajes(cacheName, req) {
 
 
                 const bodyObj = JSON.parse(body);
-                return guardarMensaje(bodyObj);
+                returnguardarMensaje(bodyObj);
 
             });
         } else {
