@@ -178,3 +178,32 @@ function getMensajes() {
 }
 
 getMensajes();
+
+//cambios de conexión
+
+function isOnline() {
+
+    if (navigator.onLine) {
+        //conexión
+        $.mdtoast('Online', {
+            interaction: true,
+            interactionTimeout: 1000,
+            actionText: 'OK!'
+        });
+
+
+    } else {
+        // No tenemos conexión
+        $.mdtoast('Offline', {
+            interaction: true,
+            actionText: 'OK',
+            type: 'warning'
+        });
+    }
+
+}
+
+window.addEventListener('online', isOnline);
+window.addEventListener('offline', isOnline);
+
+isOnline();
